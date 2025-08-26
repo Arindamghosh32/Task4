@@ -1,0 +1,84 @@
+.skills {
+  background-color: var(--dark-color);
+  padding: 6rem 0;
+}
+
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skills-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.skills-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.skills-text p {
+  line-height: 1.8;
+}
+
+.skills-bars {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  width: 150px; /* fixed width for skill name + percentage */
+}
+
+.skill-info p {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.progress-bar {
+  flex: 1;                /* take full available width */
+  height: 20px;
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.progress {
+  height: 100%;
+  width: 0%;              /* start collapsed */
+  border-radius: 12px;
+  background: repeating-linear-gradient(
+    45deg,
+    #00aaff,
+    #00aaff 10px,
+    #000 10px,
+    #000 20px
+  );
+  background-size: 40px 40px;
+  animation: stripeMove 1s linear infinite;  /* moving stripes */
+  transition: width 1.5s ease-in-out;        /* smooth fill */
+}
+
+@keyframes stripeMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+@media (max-width: 768px) {
+  .skills-text h3 { font-size: 1.8rem; }
+  .skill-info p   { font-size: 0.9rem; }
+}
